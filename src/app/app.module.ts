@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CreateGridComponent } from './page/create-grid/create-grid.component';
+import { SavedGridComponent } from './page/saved-grid/saved-grid.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateGridComponent,
+    SavedGridComponent
   ],
   imports: [
     BrowserModule,
