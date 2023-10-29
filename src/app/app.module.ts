@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateGridComponent } from './page/create-grid/create-grid.component';
 import { SavedGridComponent } from './page/saved-grid/saved-grid.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SavedGridComponent } from './page/saved-grid/saved-grid.component';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule
   ],
   providers: [],

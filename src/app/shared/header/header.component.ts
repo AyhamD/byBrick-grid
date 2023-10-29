@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public mobileView = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    if (window.screen.width > 450) {
+      this.mobileView = true;
+    }
   }
 
 }
