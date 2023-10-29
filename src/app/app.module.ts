@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { CreateGridComponent } from './page/create-grid/create-grid.component';
 import { SavedGridComponent } from './page/saved-grid/saved-grid.component';
 import { SharedModule } from './shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -14,8 +18,12 @@ import { SharedModule } from './shared/shared.module';
     SavedGridComponent
   ],
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
+    ReactiveFormsModule,
     SharedModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
