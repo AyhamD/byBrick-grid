@@ -2,18 +2,20 @@
     <h2>Create new grid</h2>
     <form [formGroup]="gridForm" class="row">
         <div class="row-element">
-            <mat-label>Enter rows </mat-label>
-            <mat-form-field appearance="outline">
-                <input matInput formControlName="rows">
+            <mat-label>Enter number of rows </mat-label>
+            <mat-form-field appearance="outline" class="form-field">
+                <input matInput (keypress)="onlyNumber($event)" formControlName="rows" />
             </mat-form-field>
         </div>
         <div class="row-element">
-            <mat-label>Enter column </mat-label>
-            <mat-form-field appearance="outline">
-                <input matInput formControlName="cols">
+            <mat-label>Enter number of column </mat-label>
+            <mat-form-field appearance="outline" class="form-field">
+                <input matInput (keypress)="onlyNumber($event)" formControlName="cols" />
             </mat-form-field>
         </div>
     </form>
 
-    <button color="primary" mat-raised-button>Basic</button>
+    <button color="primary" mat-raised-button (click)="createNewGrid()" [disabled]="!gridForm.valid">Create new</button>
+
+    <app-grid *ngIf="showCreatedGrid" [showCreatedGrid]="gridForm.valid" [numRows]="gridForm.get('rows')?.value" [numCols]="gridForm.get('cols')?.value"></app-grid>
 </div>

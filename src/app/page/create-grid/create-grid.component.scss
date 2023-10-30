@@ -2,6 +2,8 @@
     padding: 24px;
     .row{
         display: flex;
+        justify-content: space-between;
+        width: 50%;
 
         .row-element{
             display: flex;

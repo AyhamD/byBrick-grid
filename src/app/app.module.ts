@@ -7,26 +7,31 @@ import { CreateGridComponent } from './page/create-grid/create-grid.component';
 import { SavedGridComponent } from './page/saved-grid/saved-grid.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GridComponent } from './page/create-grid/grid/grid.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateGridComponent,
-    SavedGridComponent
+    SavedGridComponent,
+    GridComponent
   ],
   imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
     BrowserModule,
+    MatButtonModule,
     ReactiveFormsModule,
     SharedModule,
+    BrowserAnimationsModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

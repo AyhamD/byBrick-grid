@@ -1,0 +1,19 @@
+<div class="grid-container">
+    <div *ngFor="let row of grid">
+        <div *ngFor="let cell of row" class="grid-cell" [ngClass]="cell.status" (click)="cellClicked(cell)">
+            {{cell.value}}</div>
+    </div>
+</div>
+
+<div>
+    <form [formGroup]="nawGridForm">
+        <div class="row-element">
+            <label for="gridName">Grid Name:</label>
+            <mat-form-field appearance="outline" class="form-field">
+                <input matInput formControlName="gridName">
+            </mat-form-field>
+        </div>
+    </form>
+    
+    <button [disabled]="!nawGridForm.valid" color="primary" (click)="saveGrid()" mat-raised-button>save</button>
+</div>

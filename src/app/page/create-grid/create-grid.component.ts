@@ -8,9 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateGridComponent implements OnInit {
   gridForm: FormGroup
+  showCreatedGrid:boolean = false;
   constructor(private formBuilder: FormBuilder){ 
     this.gridForm = this.formBuilder.group({
-      cols: ['5', Validators.required],
+      cols: ['', Validators.required],
       rows: ['', Validators.required],
     })
   }
@@ -18,4 +19,15 @@ export class CreateGridComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onlyNumber(event:KeyboardEvent){
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
+
+  createNewGrid(){
+    this.showCreatedGrid = true;
+  }
 }
