@@ -1,0 +1,41 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    grid-auto-rows: minmax(50px, 1fr);
+    gap: 5px;
+    padding-top: 48px;
+
+    .grid-cell {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+
+    .nothing {
+        background-color: gray;
+    }
+
+    .ok {
+        background-color: green;
+    }
+
+    .warning {
+        background-color: orange;
+    }
+
+    .error {
+        background-color: red;
+    }
+}
+
+.row-element{
+    display: flex;
+    flex-direction: column;
+    .form-field{
+        width: 30%;
+    }
+}

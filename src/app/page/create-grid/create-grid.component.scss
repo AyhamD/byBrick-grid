@@ -1,0 +1,13 @@
+.create-grid{
+    padding: 24px;
+    .row{
+        display: flex;
+        justify-content: space-between;
+        width: 450px;
+
+        .row-element{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
