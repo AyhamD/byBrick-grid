@@ -6,6 +6,7 @@ export interface grid {
 export interface gridList {
     grid:grid[][]
     gridName:string
+    id?:string
 }
 
 

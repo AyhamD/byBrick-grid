@@ -1,22 +1,22 @@
 <div class="show-grid">
     <h2>Show created grid</h2>
-    <div class="grid-item" *ngFor="let grid of gridList">
+    <div class="grid-item" *ngFor="let grid of gridList; index as i">
         <h3>{{grid.gridName}}</h3>
         <div class="grid-container">
             <div *ngFor="let row of grid.grid">
-                <div *ngFor="let cell of row" class="grid-cell" [ngClass]="cell.status" (click)="cellClicked(cell)">
+                <div *ngFor="let cell of row" class="grid-cell" [ngClass]="cell.status" (click)="cellClicked(cell,i)">
                     {{cell.value}}</div>
             </div>
         </div>
         <div class="action-button">
-            <button color="primary" (click)="editGrid()" mat-raised-button>
-                <mat-icon class="mat-icon">{{ !editGridStatus ? 'edit' : 'close'}}</mat-icon>
-                {{ !editGridStatus ? 'edit' : 'cancel'}}
+            <button color="primary" *ngIf="!editGridStatus[i]" (click)="editGrid(i)" mat-raised-button>
+                <mat-icon class="mat-icon">{{ 'edit' }}</mat-icon>
+                {{ 'edit' }}
             </button>
-            <button color="primary" *ngIf="editGridStatus" (click)="updateGrid()" mat-raised-button>
+            <button color="primary" *ngIf="editGridStatus[i]" (click)="updateGrid(i, grid.id)" mat-raised-button>
                 update
             </button>
-            <button color="warn" *ngIf="!editGridStatus" (click)="deleteGrid()" mat-raised-button>
+            <button color="warn" (click)="deleteGrid(i, grid.id)" mat-raised-button>
                 <mat-icon class="mat-icon">delete</mat-icon>
                 Delete
             </button>

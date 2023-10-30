@@ -14,7 +14,6 @@ export class GridComponent implements OnInit, OnChanges {
   @Input() showCreatedGrid!: boolean;
 
   grid: grid[][] = [];
-  gridList: gridList[] = [];
 
   nawGridForm: FormGroup = this.fb.group({
     gridName: ['', Validators.required]
@@ -55,8 +54,8 @@ export class GridComponent implements OnInit, OnChanges {
       gridName: gridName
     };
   
-    this.gridList.push(gridListItem);
-    this.gridService.setData(this.gridList);
+    this.gridService.gridList.push(gridListItem);
+    this.gridService.createGrid(this.gridService.gridList)
   }
 
   private toggleStatus(status: string): string {
