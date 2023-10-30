@@ -1,5 +1,8 @@
 # ByBrickGrid
 
+Before star clone the backend project https://github.com/AyhamD/gridapi and run it. Get the localhost port
+then change it in the environment file.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
 ## Development server
